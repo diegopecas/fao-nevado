@@ -1,0 +1,35 @@
+.panel-pecuarios {
+  position: absolute;
+  width: 350px;
+  height: calc(100vh - 100px);
+  max-height: calc(100vh - 100px);
+  right: 50px;
+  top: 100px;
+  overflow-y: auto;
+  background-color: #ffffffff;
+  z-index: 99999999;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 20px;
+}
+
+.form-label{
+    width: 100%;
+}
+
+.titulo {
+  width: 100%;
+  background-color: #e4e4e488;
+  padding-top: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+}
+
+.content {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}

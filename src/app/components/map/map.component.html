@@ -1,0 +1,15 @@
+<div
+  class="map"
+  id="map"
+  leaflet
+  [leafletOptions]="options"
+  (leafletMapReady)="onMapReady($event)"
+>
+</div>
+  <app-ndr-toolbar (clickMenu)="clickMenu($event)"></app-ndr-toolbar>
+  <app-capas *ngIf="panelVisible === 'capas'" (encender)="encenderCapa($event)" (apagar)="apagarCapa($event)" (transparencia)="transparenciaCapa($event)"></app-capas>
+  <app-cobertura-municipios *ngIf="panelVisible === 'coberturas'" (emDepartamentoSeleccionado)="filtroDepartamento($event)" (emMunicipioSeleccionado)="filtroMunicipio($event)"></app-cobertura-municipios>
+  <app-transitorios *ngIf="panelVisible === 'transitorios'" (emDepartamentoSeleccionado)="filtroDepartamento($event)" (emMunicipioSeleccionado)="filtroMunicipio($event)"></app-transitorios>
+  <app-permanentes *ngIf="panelVisible === 'permanentes'" (emDepartamentoSeleccionado)="filtroDepartamento($event)" (emMunicipioSeleccionado)="filtroMunicipio($event)"></app-permanentes>
+  <app-pecuarios *ngIf="panelVisible === 'pecuarios'" (emDepartamentoSeleccionado)="filtroDepartamento($event)" (emMunicipioSeleccionado)="filtroMunicipio($event)"></app-pecuarios>
+  <app-video *ngIf="panelVisible === 'video'"></app-video>

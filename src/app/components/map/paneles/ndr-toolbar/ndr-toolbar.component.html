@@ -1,0 +1,47 @@
+<div class="toolbar">
+  <div
+    class="boton-menu"
+    title="Control de capas"
+    (click)="emitirEvento('capas')"
+    ><fa-icon [icon]="faLayerGroup" size="1x"></fa-icon
+  ></div>
+  <hr class="toolbar-separator" />
+  <div
+    class="boton-menu"
+    title="Cobertura por municipios"
+    (click)="emitirEvento('coberturas')"
+    ><fa-icon [icon]="faStreetView" size="1x"></fa-icon
+  ></div>
+  <hr class="toolbar-separator" />
+  <div
+    class="boton-menu"
+    title="Datos de cultivos transitorios"
+    (click)="emitirEvento('transitorios')"
+    ><fa-icon [icon]="faChartArea" size="1x"></fa-icon
+  ></div>
+  <hr class="toolbar-separator" />
+  <div
+    class="boton-menu"
+    title="Datos de cultivos permanentes"
+    (click)="emitirEvento('permanentes')"
+    ><fa-icon [icon]="faChartBar" size="1x"></fa-icon
+  ></div>
+  <hr class="toolbar-separator" />
+  <div
+    class="boton-menu"
+    title="Datos de pecuarios"
+    (click)="emitirEvento('pecuarios')"
+    ><fa-icon [icon]="faChartColumn" size="1x"></fa-icon
+  ></div>
+  <hr class="toolbar-separator" />
+  <div class="boton-menu" title="En vivo" (click)="emitirEvento('video')"
+    ><fa-icon [icon]="faVideo" size="1x"></fa-icon
+  ></div>
+  <hr class="toolbar-separator" />
+  <div
+    class="boton-menu"
+    title="Cerrar páneles"
+    (click)="emitirEvento('')"
+    ><fa-icon [icon]="faXmark" size="1x"></fa-icon
+  ></div>
+</div>

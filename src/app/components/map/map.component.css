@@ -1,0 +1,10 @@
+@import "leaflet-sidebar-v2/css/leaflet-sidebar.min.css";
+
+.map {
+    width: 100vw;
+    height: calc(100vh - 100px);
+}
+
+.leaflet-popup {
+    visibility: hidden !important;
+}

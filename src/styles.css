@@ -1,167 +1,121 @@
-body {
-    width: 100vw !important;
-    max-width: 100vw !important;
+/* You can add global styles to this file, and also import other style files */
+ body {
+    margin: 0px;
+ }
+
+.ndr-font12 {
+  font-size: 12px !important;
 }
 
-.row {
-    margin: 0 !important;
-    padding: 0 !important;
+.ndr-font14 {
+  font-size: 14px !important;
 }
 
-.fao-barra {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 10px 10px 10px 10px !important;
-    color: #FFFFFF !important;
-    background-color: #116aab !important;
+.ndr-font16 {
+  font-size: 16px !important;
 }
 
-.map-container {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 30px;
-    height: 100% !important;
+.ndr-font-bold {
+  font-weight: bolder;
 }
 
-.map-frame {
-    border: 2px solid black;
-    height: 100%;
-    width: 100%;
+.ndr-mouse-pointer {
+  cursor: pointer;
 }
 
-#map {
-    height: 100%;
-    width: 100%; 
-    /*height: 500px !important;*/
+.ndr-tabla {
+   border-collapse: collapse !important;
+   /*border-color: #99cce8 !important;
+   border-width: thin !important;
+   border-style: solid !important;*/
+   padding: 10px !important;
+   background-color: #ffffff !important;
+   min-width: 100% !important;
+   overflow-x: auto !important;
+   /*border-radius: 15px !important;
+   -moz-border-radius:15px !important;*/
+ }
+ 
+ .ndr-tabla thead tr {
+   background-color: #e6f3fa !important;
+ }
+ 
+ .ndr-tabla thead tr th {
+   color: #3466cc !important;
+   font-size: 12px !important;
+   padding: 15px 5px;
+   border-color: #99cce8 !important;
+   border-style: solid !important;         
+   border-width: thin !important;
+ }
+ 
+ .ndr-tabla tbody tr td {
+   color: #0080c5 !important;
+   font-size: 12px !important;
+   padding: 15px 5px;
+   border-color: #99cce8 !important;
+   border-style: solid !important;
+   border-width: thin !important;
+ }
+ 
+ .ndr-tabla tbody tr:nth-child(even) {
+   background-color: #e6f3fa !important;
+ }
+ 
+ .ndr-tabla tfoot tr td {
+   padding-top: 15px !important;
+ }
+ 
+ .ndr-tabla-icono {
+   height: 18px !important;
+   color: #0080c5 !important;
+   cursor: pointer;
+ }
+ 
+ .ndr-tabla-icono:hover {
+   height: 18px !important;
+   color: #3466cc !important;
+   border-color: #3466cc;
+   border-bottom: solid thin;
+ }
+
+
+
+.boton-descarga {
+	-moz-box-shadow: 0px 0px 0px 0px #29bbff;
+	-webkit-box-shadow: 0px 0px 0px 0px #29bbff;
+	box-shadow: 0px 0px 0px 0px #29bbff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+	background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+	background-color:#2dabf9;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:12px;
+	padding:10px 31px;
+	text-decoration:none;
+   border: none;
 }
 
-.btn-xs
-{
-    padding: 1px 5px !important;
-    font-size: 12px !important;
-    line-height: 1.5 !important;
-    border-radius: 3px !important;
+.boton-descarga:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+	background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+	background-color:#0688fa;
 }
 
-.activeLayer {
-    color: orange !important;
-    font-size: 12px !important;
-    cursor: pointer;
-    text-decoration: none;
+.boton-descarga:active {
+	position:relative;
+	top:1px;
 }
-
-.activeLayer:hover {
-    color: red !important;
-    font-size: 12px !important;
-    cursor: pointer;
-}
-
-.inactiveLayer {
-    color: gray !important;
-    font-size: 12px !important;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.inactiveLayer:hover {
-    color: red !important;
-    font-size: 12px !important;
-    cursor: pointer;
-}
-
-li {list-style:none;}
-
-.margen {
-    padding-left: 25px !important;
-    padding-right: 25px !important;
-    padding-top: 25px !important;
-}
-
-.margen-lateral {
-    padding-left: 25px !important;
-    padding-right: 25px !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-}
-
-.panel-principal {
-    height: calc(100vh - 78px - 60px) !important;
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    /*width: 100% !important;*/
-}
-
-.panel-izquierdo {
-    /*width: 30% !important;*/
-    /*border-right: solid #116aab !important;*/
-    padding-top: 10px;
-    height: 100% !important;
-    overflow-y: auto !important;
-}
-
-.panel-centro {
-    /*width: 50% !important;*/
-    height: 100% !important;
-    margin: 0;
-    padding: 0 !important;
-}
-
-.panel-centro-full {
-    /*width: 100% !important;*/
-    height: 100% !important;
-    margin: 0;
-    padding: 0 !important;
-}
-
-.panel-derecho {
-    height: 100% !important;
-    overflow-y: auto !important;
-    padding-top: 10px;
-}
-
-
-.custom-popup .leaflet-popup-content-wrapper {
-    background:#ffffff;
-    color:#116aab;
-    font-size:16px;
-    line-height:24px;
-}
-
-.custom-popup .leaflet-popup-content-wrapper a {
-    color:rgba(255,255,255,0.5);
-}
-
-.custom-popup .leaflet-popup-tip-container {
-    width:30px;
-    height:15px;
-}
-
-.custom-popup .leaflet-popup-tip {
-    border-left:15px solid transparent;
-    border-right:15px solid transparent;
-    border-top:15px solid #116aab;
-}
-
-caption {
-    color: #116aab !important;
-}
-
-.titulo-azul-16 {
-    color: #116aab !important;
-    font-size: 16px !important;
-}
-
-
-.leaflet-geosearch-bar form {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: block;
-    border-radius: 4px;
-}
-
-.texto-12 {
-    font-size: 12px !important;
-}
+     

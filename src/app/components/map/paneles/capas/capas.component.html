@@ -1,0 +1,198 @@
+<div class="panel-capas">
+  <div class="titulo">
+    <h6>CAPAS</h6>
+  </div>
+  <div class="content">
+    <label
+      class="ndr-font14 ndr-font-bold ndr-mouse-pointer"
+      (click)="togglePanel('nevado')"
+      >NEVADO DEL RUIZ</label
+    >
+    <hr />
+    <div class="panel" [class.active]="paneles.nevado">
+      <ng-container *ngFor="let capa of capas.amenaza; let i = index">
+        <div class="row">
+          <div class="col">
+            <p
+              [ngClass]="
+                capa.estado
+                  ? 'activeLayer ndr-font14 ndr-mouse-pointer'
+                  : 'inactiveLayer ndr-font14 ndr-mouse-pointer'
+              "
+              (click)="toggleLayerProps(capa)"
+            >
+              {{ capa.nombre }}
+            </p>
+          </div>
+          <div class="col-auto">
+            <input
+              type="checkbox"
+              [id]="'toggle_am_' + i"
+              class="toggle-checkbox"
+              [checked]="capa.estado"
+              (click)="cambiarEstado(capa)"
+            />
+            <label [for]="'toggle_am_' + i" class="toggle-label"></label>
+          </div>
+        </div>
+        <div
+          *ngIf="capa.estado"
+          class="row margen-lateral panel"
+          [class.active]="capa.propiedades"
+        >
+          <div class="col-5">
+            <p class="ndr-font12">Transparencia</p>
+          </div>
+          <div class="col-7">
+            <input
+              type="range"
+              [id]="'numero_am_' + i"
+              [name]="'numero_am_' + i"
+              min="0"
+              max="100"
+              value="50"
+              (change)="cambiarTransparencia(capa.capa, $event)"
+            />
+          </div>
+          <div class="col-5">
+            <p class="ndr-font12">Leyenda</p>
+          </div>
+          <div class="col-7">
+            <p>
+              <img [src]="capa.leyenda" class="imagen-leyenda" />
+            </p>
+          </div>
+        </div>
+        <hr />
+      </ng-container>
+    </div>
+    <br />
+    <label
+      class="ndr-font14 ndr-font-bold ndr-mouse-pointer"
+      (click)="togglePanel('coberturas')"
+      >COBERTURAS POR CULTIVO</label
+    >
+    <hr />
+    <div class="panel" [class.active]="paneles.coberturas">
+      <ng-container *ngFor="let capa of capas.coberturas; let i = index">
+        <div class="row">
+          <div class="col">
+            <p
+              [ngClass]="
+                capa.estado
+                  ? 'activeLayer ndr-font14 ndr-mouse-pointer'
+                  : 'inactiveLayer ndr-font14 ndr-mouse-pointer'
+              "
+              (click)="toggleLayerProps(capa)"
+            >
+              {{ capa.nombre }}
+            </p>
+          </div>
+          <div class="col-auto">
+            <input
+              type="checkbox"
+              [id]="'toggle_cob_' + i"
+              class="toggle-checkbox"
+              [checked]="capa.estado"
+              (click)="cambiarEstado(capa)"
+            />
+            <label [for]="'toggle_cob_' + i" class="toggle-label"></label>
+          </div>
+        </div>
+        <div
+          *ngIf="capa.estado"
+          class="row margen-lateral panel"
+          [class.active]="capa.propiedades"
+        >
+          <div class="col-5">
+            <p class="ndr-font12">Transparencia</p>
+          </div>
+          <div class="col-7">
+            <input
+              type="range"
+              [id]="'numero_cob_' + i"
+              [name]="'numero_cob_' + i"
+              min="0"
+              max="100"
+              value="50"
+              (change)="cambiarTransparencia(capa.capa, $event)"
+            />
+          </div>
+          <div class="col-5">
+            <p class="ndr-font12">Leyenda</p>
+          </div>
+          <div class="col-7">
+            <p>
+              <img [src]="capa.leyenda" class="imagen-leyenda" />
+            </p>
+          </div>
+        </div>
+        <hr />
+      </ng-container>
+    </div>
+    <br />
+    <label
+      class="ndr-font14 ndr-font-bold ndr-mouse-pointer"
+      (click)="togglePanel('referencia')"
+      >CAPAS DE REFERENCIA</label
+    >
+    <hr />
+    <div class="panel" [class.active]="paneles.referencia">
+      <ng-container *ngFor="let capa of capas.referencia; let i = index">
+        <div class="row">
+          <div class="col">
+            <p
+              [ngClass]="
+                capa.estado
+                  ? 'activeLayer ndr-font14 ndr-mouse-pointer'
+                  : 'inactiveLayer ndr-font14 ndr-mouse-pointer'
+              "
+              (click)="toggleLayerProps(capa)"
+            >
+              {{ capa.nombre }}
+            </p>
+          </div>
+          <div class="col-auto">
+            <input
+              type="checkbox"
+              [id]="'toggle_ref_' + i"
+              class="toggle-checkbox"
+              [checked]="capa.estado"
+              (click)="cambiarEstado(capa)"
+            />
+            <label [for]="'toggle_ref_' + i" class="toggle-label"></label>
+          </div>
+        </div>
+        <div
+          *ngIf="capa.estado"
+          class="row margen-lateral panel"
+          [class.active]="capa.propiedades"
+        >
+          <div class="col-5">
+            <p class="ndr-font12">Transparencia</p>
+          </div>
+          <div class="col-7">
+            <input
+              type="range"
+              [id]="'numero_ref_' + i"
+              [name]="'numero_ref_' + i"
+              min="0"
+              max="100"
+              value="50"
+              (change)="cambiarTransparencia(capa.capa, $event)"
+            />
+          </div>
+          <div class="col-5">
+            <p class="ndr-font12">Leyenda</p>
+          </div>
+          <div class="col-7">
+            <p>
+              <img [src]="capa.leyenda" class="imagen-leyenda" />
+            </p>
+          </div>
+        </div>
+        <hr />
+      </ng-container>
+    </div>
+  </div>
+</div>

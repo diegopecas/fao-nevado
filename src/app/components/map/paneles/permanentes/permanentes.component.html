@@ -1,0 +1,63 @@
+<div class="panel-permanentes">
+  <div class="titulo">
+    <h6>Cultivos permanentes</h6>
+  </div>
+  <div class="content">
+    <div class="input-group" *ngIf="listaDepartamentos">
+      <label class="form-label">Seleccionar departamento</label>
+      <select
+        class="form-select ndr-font12"
+        [(ngModel)]="departamentoSeleccionado"
+        (change)="cambiarDepartamento()"
+      >
+        <option disabled>Seleccionar</option>
+        <ng-container *ngFor="let d of listaDepartamentos">
+          <option [value]="d.codigo">{{ d.nombre }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <br/>
+    <div class="input-group" *ngIf="departamentoSeleccionado">
+      <label class="form-label">Seleccionar municipio</label>
+      <select
+        class="form-select ndr-font12"
+        [(ngModel)]="municipioSeleccionado"
+        (change)="cambiarMunicipio()"
+      >
+        <option disabled>Seleccionar</option>
+        <ng-container *ngFor="let m of listaMunicipios">
+          <option [value]="m.codigo">{{ m.nombre }}</option>
+        </ng-container>
+      </select>
+    </div>
+    <hr *ngIf="municipioSeleccionado !== '' && dataCultivos.length > 0" />
+    <canvas *ngIf="municipioSeleccionado !== '' && dataCultivos.length > 0"
+      baseChart
+      [type]="'pie'"
+      [datasets]="pieChartDatasets"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [legend]="pieChartLegend"
+    >
+    </canvas>
+    <hr *ngIf="municipioSeleccionado !== '' && dataCultivos.length > 0" />
+    <table class="ndr-tabla" *ngIf="municipioSeleccionado !== '' && dataCultivos.length > 0" id="data">
+      <thead>
+        <tr>
+          <th>Cultivo</th>
+          <th>Ha</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of dataCultivos">
+          <td>{{ c.name }}</td>
+          <td>{{ c.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <hr *ngIf="municipioSeleccionado !== '' && dataCultivos.length > 0" />
+    <div class="text-center" *ngIf="municipioSeleccionado !== '' && dataCultivos.length > 0">
+        <button class="boton-descarga" (click)="exportexcel()">descargar datos</button>
+    </div>
+  </div>
+</div>
